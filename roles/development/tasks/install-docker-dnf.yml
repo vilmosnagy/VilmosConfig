@@ -1,0 +1,10 @@
+- name: "[DOCKER]        | Adding Docker repository"
+  get_url:
+    url: https://download.docker.com/linux/fedora/docker-ce.repo
+    dest: /etc/yum.repos.d/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: "[DOCKER]        | Installing Docker package"
+  dnf: name=docker-ce

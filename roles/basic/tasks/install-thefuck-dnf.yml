@@ -1,0 +1,5 @@
+- name: "[TheFuck]       | Installing platform dependent packages for TheFuck"
+  dnf: name={{item}}
+  with_items:
+   - redhat-rpm-config
+   - python2-devel

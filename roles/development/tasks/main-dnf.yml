@@ -1,0 +1,9 @@
+- name: "[BASE PKGS]     | Installing general development tools"
+  dnf: name={{item}}
+  with_items:
+   - git
+   - gitk
+   - maven  
+   - meld
+   - thermostat
+

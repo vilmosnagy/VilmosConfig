@@ -1,9 +1,0 @@
-
-- name: "dnf | ensure VIM present"
-  dnf: name=vim
-
-- name: "dnf | install basic packages"
-  dnf: name="{{item}}"
-  with_items:
-  - libselinux-python 
-

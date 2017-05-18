@@ -1,13 +1,4 @@
+- include: install-chrome.yml
 
-- include: setup-dnf.yml
+- include: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
-
-- name: "Install TheFuck"
-  pip:
-   name: thefuck
-
-- name: "Include Fuck registration into bashrc"
-  lineinfile:
-   path: /home/vilmosnagy/.bashrc
-   regexp: 'thefuck --alias'
-   line: 'eval $(thefuck --alias)'

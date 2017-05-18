@@ -1,0 +1,7 @@
+- name: "[VIM]           | Installing VIM"
+  dnf: name=vim
+
+- name: "[BASE PKGS]     | Installing platform dependent necessary packages"
+  dnf: name="{{item}}"
+  with_items:
+  - libselinux-python

@@ -1,0 +1,7 @@
+- name: "[CHROME]        | Ensure Google Chrome repo present"
+  copy: src=google-chrome.repo
+        dest=/etc/yum.repos.d/
+        owner=root group=root mode=0644
+
+- name: "[CHROME]        | Install Google Chrome"
+  dnf: name=google-chrome-stable
