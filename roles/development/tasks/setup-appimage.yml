@@ -1,0 +1,17 @@
+# TODO
+- name: "Checking that JetBrains toolbox installed"
+  stat:
+   path: /home/vilmosnagy/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+  register: stat_result
+
+
+- name: "AppImage | download JetBrains toolbox"
+  when: stat_result.stat.exists == False
+  unarchive:
+   src: https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.2.2314.tar.gz 
+   dest: /tmp/
+   remote_src: True
+
+- name: "AppImage | install JetBrains toolbox"
+  when: stat_result.stat.exists == False 
+  command: echo "Start the Toolbox App From the tmp directory to install"

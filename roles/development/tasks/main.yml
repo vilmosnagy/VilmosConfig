@@ -1,0 +1,5 @@
+
+- include: setup-dnf.yml
+  when: ansible_pkg_mgr == 'dnf'
+
+- include: setup-appimage.yml
