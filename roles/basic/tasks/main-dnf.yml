@@ -1,5 +1,8 @@
-- name: "[VIM]           | Installing VIM"
-  dnf: name=vim
+- name: "[BASE APPS]     | Installing usefull applications"
+  dnf: name={{item}}
+  with_items:
+   - vim
+   - htop
 
 - name: "[BASE PKGS]     | Installing platform dependent necessary packages"
   dnf: name="{{item}}"

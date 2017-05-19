@@ -1,4 +1,4 @@
-- include: install-thefuck-dnf.yml
+- include: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
 - include: install-thefuck.yml
