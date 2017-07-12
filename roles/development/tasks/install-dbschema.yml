@@ -1,0 +1,21 @@
+# TODO
+- name: "[DBSCHEMA]     | Checking that DbSchema installed"
+  stat:
+   path: /home/vilmosnagy/.local/share/applications/DbSchema.desktop
+  register: stat_result
+
+
+- include: install-dbschema-dnf.yml
+  when:
+   - stat_result.stat.exists == False
+   - ansible_pkg_mgr == 'dnf'
+
+- name: "[DBSCHEMA]     | Copy the Desktop Entry of DbSchema"
+  when: stat_result.stat.exists == False
+  copy:
+    src: /opt/DbSchema/DbSchema.desktop
+    dest: /home/vilmosnagy/.local/share/applications/DbSchema.desktop
+    owner: vilmosnagy
+    group: vilmosnagy
+    mode: "u=rw,g=r,o=r"
+

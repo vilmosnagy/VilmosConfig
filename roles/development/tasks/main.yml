@@ -6,5 +6,6 @@
   when: ansible_pkg_mgr == 'dnf'
 
 - include: install-docker.yml
+- include: install-dbschema.yml
 
 - include: install-intellij.yml

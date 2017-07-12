@@ -1,0 +1,4 @@
+- name: "[DBSCHEMA]     | Download & Install DbSchema"
+  dnf: name={{item}}
+  with_items:
+   - http://www.dbschema.com/download/DbSchema_linux_7_5_2.rpm
