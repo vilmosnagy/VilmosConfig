@@ -2,3 +2,16 @@
 
 - include: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
+
+- name: "BASH Config | HISTSIZE"
+  lineinfile:
+    path: /home/vilmosnagy/.bashrc
+    regexp: '^HISTSIZE'
+    line: 'HISTSIZE=-1'
+
+
+- name: "BASH Config | HISTFILESIZE"
+  lineinfile:
+    path: /home/vilmosnagy/.bashrc
+    regexp: '^HISTFILESIZE'
+    line: 'HISTFILESIZE=-1'
