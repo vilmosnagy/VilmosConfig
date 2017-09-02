@@ -1,0 +1,8 @@
+- name: "[NPM PKGS]      | Installing required npm packages."
+  npm:
+    name: "{{ item }}"
+    global: yes
+  with_items:
+     - "typescript"
+     - "@angular/cli@1.0.0"
+     -

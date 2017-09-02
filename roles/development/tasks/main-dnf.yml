@@ -10,4 +10,6 @@
    - http://www.dbschema.com/download/DbSchema_linux_7_5_2.rpm
    - java-1.8.0-openjdk-src
    - android-tools
+   - golang
+   - npm
    - pandoc                             # Pandoc required for redmine-gitlab migrator
