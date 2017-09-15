@@ -3,6 +3,8 @@
   with_items:
    - vim
    - htop
+   - pandoc
+   - texlive-scheme-full
 
 - name: "[BASE PKGS]     | Installing platform dependent necessary packages"
   dnf: name="{{item}}"

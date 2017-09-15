@@ -12,4 +12,3 @@
    - android-tools
    - golang
    - npm
-   - pandoc                             # Pandoc required for redmine-gitlab migrator
