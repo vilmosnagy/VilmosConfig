@@ -1,9 +1,9 @@
 #!/bin/bash
 
-protected_branch_pattern='(master.*\|release.*\|deploy.*)'
+protected_branch_pattern='master.*\|release.*\|deploy.*'
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
-if [ $current_branch =~ $protected_branch_pattern ]
+if echo "$current_branch" | grep $protected_branch_pattern
 then
     read -p "You're about to push $current_branch, is that what you intended? [y|n] " -n 1 -r < /dev/tty
     echo
