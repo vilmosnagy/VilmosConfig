@@ -1,0 +1,22 @@
+- name: "[git]           | Create folder for git template"
+  file:
+   path: "/home/vilmosnagy/.git_template/hooks"
+   recurse: yes
+   state: directory
+
+- name: "[git]           | Install git pre-push hook"
+  copy: src=git/prepush.hook
+        dest=/home/vilmosnagy/.git_template/hooks/pre-push
+        owner=vilmosnagy group=vilmosnagy mode=0755
+
+- name: "[git]           | Setup the global git config"
+  git_config:
+    name="{{ item.name }}"
+    scope=global
+    value="{{ item.value }}"
+  become: no
+  with_items:
+    - {name: "user.name",  value: "Vilmos Nagy" }
+    - {name: "user.email", value: "vilmos.nagy@outlook.com" }
+    - {name: "core.editor",   value: "vim" }
+    - {name: "init.templatedir",   value: "/home/vilmosnagy/.git_template" }

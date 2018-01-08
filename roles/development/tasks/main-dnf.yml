@@ -1,3 +1,5 @@
+- include: install-yarn-dnf.yml
+
 - name: "[BASE PKGS]     | Installing general development tools"
   dnf: name={{item}}
   with_items:

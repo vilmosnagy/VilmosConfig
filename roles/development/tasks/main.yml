@@ -7,9 +7,7 @@
 - include: install-npm-packages.yml
 - include: install-dbschema.yml
 - include: install-intellij.yml
-- include: install-yarn-dnf.yml
+- include: config-git-hooks.yml
 
 - pip:
     name: awslogs
-- pip:
-    name: awscli
