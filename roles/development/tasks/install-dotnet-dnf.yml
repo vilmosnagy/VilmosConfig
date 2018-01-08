@@ -1,0 +1,7 @@
+- name: "[DOTNET]        | Ensure .NET Core repo present"
+  copy: src=dotnet.repo
+        dest=/etc/yum.repos.d/
+        owner=root group=root mode=0644
+
+- name: "[DOTNET]        | .NET Core"
+  dnf: name=dotnet-sdk-2.0.2
