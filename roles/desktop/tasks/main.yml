@@ -9,11 +9,4 @@
     regexp: '^HISTSIZE'
     line: 'HISTSIZE=-1'
 
-
-- name: "BASH Config | HISTFILESIZE"
-  lineinfile:
-    path: /home/vilmosnagy/.bashrc
-    regexp: '^HISTFILESIZE'
-    line: 'HISTFILESIZE=-1'
-
 # TODO add OpenVPN config. MD5 must be enabled on Fedora. HOWTO: https://www.centos.org/forums/viewtopic.php?t=47210

@@ -1,0 +1,6 @@
+- name: "[BASE APPS]     | Installing usefull applications"
+  apt: name={{item}}
+  with_items:
+   - vim
+   - htop
+   - pandoc

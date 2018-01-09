@@ -1,4 +1,7 @@
 - include: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
+- include: main-apt.yml
+  when: ansible_pkg_mgr == 'apt'
+
 - include: install-thefuck.yml

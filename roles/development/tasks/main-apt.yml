@@ -1,0 +1,18 @@
+# TODO
+# - include: install-yarn-dnf.yml
+
+- name: "[BASE PKGS]     | Installing general development tools"
+  dnf: name={{item}}
+  with_items:
+   - git
+   - gitk
+   - maven  
+   - meld
+   - VirtualBox
+   - http://www.dbschema.com/download/DbSchema_linux_7_5_2.rpm
+   - java-1.8.0-openjdk-src
+   - android-tools
+   - golang
+   - npm
+   - python-devel
+   - openldap-devel
