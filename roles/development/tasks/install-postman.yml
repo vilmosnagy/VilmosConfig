@@ -1,0 +1,24 @@
+# TODO
+- name: "[POSTMAN]     | Checking that Postman is installed"
+  stat:
+   path: /opt/Postman
+  register: postman_installed
+
+
+- name: "[POSTMAN]     | Download Postman code"
+  when: postman_installed.stat.exists == False
+  unarchive:
+   src: https://dl.pstmn.io/download/latest/linux64
+   dest: /opt
+   remote_src: True
+   owner: vilmosnagy
+   group: vilmosnagy
+   mode: 0755
+
+- name: "[POSTMAN]     | Install postman Icon"
+  when: postman_installed.stat.exists == False
+  copy: src=postman/postman.desktop
+        dest=/home/vilmosnagy/.local/share/applications/postman.desktop
+        owner=vilmosnagy group=vilmosnagy mode=0644
+
+

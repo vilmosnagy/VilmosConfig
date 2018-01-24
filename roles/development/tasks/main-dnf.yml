@@ -15,3 +15,4 @@
    - npm
    - python-devel
    - openldap-devel
+   - jq

@@ -10,6 +10,7 @@
 - include: install-npm-packages.yml
 - include: install-dbschema.yml
 - include: install-intellij.yml
+- include: install-postman.yml
 - include: config-git-hooks.yml
 
 - pip:
