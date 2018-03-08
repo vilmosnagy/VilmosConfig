@@ -9,7 +9,6 @@
    - maven  
    - meld
    - VirtualBox
-   - http://www.dbschema.com/download/DbSchema_linux_7_5_2.rpm
    - java-1.8.0-openjdk-src
    - android-tools
    - golang
