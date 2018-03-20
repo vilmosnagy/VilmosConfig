@@ -1,0 +1,11 @@
+- name: "[PACKER]      | Download Packer"
+  unarchive:
+    src: https://releases.hashicorp.com/packer/1.2.1/packer_1.2.1_linux_amd64.zip
+    dest: /tmp
+    remote_src: yes
+
+- name: "[PACKER]      | Rename packer to packer.io"
+  copy:
+    src: /tmp/packer
+    dest: /usr/local/bin/packer.io
+    mode: 0775
