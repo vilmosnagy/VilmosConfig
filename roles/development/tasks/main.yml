@@ -15,5 +15,6 @@
 - include: install-minikube.yml
 - include: install-terraform.yml
 - include: install-packer.yml
+- include: install-heroku.yml
 - include: install-pip-packages.yml
 - include: config-git-hooks.yml

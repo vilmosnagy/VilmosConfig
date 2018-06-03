@@ -1,8 +1,8 @@
 - name: "[BASE PKGS]     | Ensure that general desktop applications present"
   dnf: name={{item}}
   with_items:
-   - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-27.noarch.rpm
-   - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-27.noarch.rpm
+   - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
+   - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
    - https://zoom.us/client/latest/zoom_x86_64.rpm
    - transmission
    - vlc
