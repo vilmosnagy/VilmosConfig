@@ -4,6 +4,7 @@
   dnf: name={{item}}
   with_items:
    - git
+   - git-subtree
    - gitk
    - maven  
    - meld
