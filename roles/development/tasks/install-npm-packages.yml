@@ -10,3 +10,4 @@
 #     - "bower"
 #     TODO it was installed by hand with the `--unsafe-perm` option. See: https://github.com/Polymer/polymer-cli/issues/832
 #     - "polymer-cli"
+#     - vue-cli
