@@ -1,0 +1,17 @@
+- name: "[CAMUNDA]    | Checking that Camunda-Modeler is installed"
+  stat:
+    path: /opt/camunda-modeler
+  register: camunda_modeler_installed
+
+- name: "[CAMUNDA]    | Download Camunda Modeler"
+  when: camunda_modeler_installed.stat.exists == False
+  unarchive:
+    src: https://camunda.org/release/camunda-modeler/1.16.2/camunda-modeler-1.16.2-linux-x64.tar.gz
+    dest: /opt/
+    remote_src: yes
+
+- name: "[CAMUNDA]    | Install Camunda icon"
+  when: camunda_modeler_installed.stat.exists == False
+  copy: src=camunda-modeler/camunda-modeler.desktop
+    dest=/home/vilmosnagy/.local/share/applications/camunda-modeler.desktop
+    owner=vilmosnagy group=vilmosnagy mode=0644
