@@ -1,0 +1,33 @@
+# TODO
+- name: "[SOAPUI]      | Checking that SoapUI is installed"
+  stat:
+   path: /opt/SoapUI-5.4.0
+  register: soapui_installed
+
+
+- name: "[SOAPUI]      | Download SoapUI"
+  when: soapui_installed.stat.exists == False
+  unarchive:
+   src: https://s3.amazonaws.com/downloads.eviware/soapuios/5.4.0/SoapUI-5.4.0-linux-bin.tar.gz
+   dest: /opt
+   remote_src: True
+   owner: vilmosnagy
+   group: vilmosnagy
+   mode: 0755
+
+- name: "[SOAPUI]      | Download SoapUI icon"
+  when: soapui_installed.stat.exists == False
+  get_url:
+   url: https://github.com/SmartBear/soapui/raw/next/soapui/src/main/resources/com/eviware/soapui/resources/images/SoapUI-OS-5.2_48-48.png
+   dest: /opt/SoapUI-5.4.0/SoapUI-OS-5.2_48-48.png
+   owner: vilmosnagy
+   group: vilmosnagy
+   mode: 0755
+
+- name: "[SOAPUI]      | Install postman Icon"
+  when: soapui_installed.stat.exists == False
+  copy: src=soapui/soapui.desktop
+        dest=/home/vilmosnagy/.local/share/applications/soapui.desktop
+        owner=vilmosnagy group=vilmosnagy mode=0644
+
+

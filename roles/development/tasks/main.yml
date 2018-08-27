@@ -11,6 +11,7 @@
 - include: install-dbschema.yml
 - include: install-intellij.yml
 - include: install-postman.yml
+- include: install-soapui.yml
 - include: install-kubectl.yml
 - include: install-minikube.yml
 - include: install-terraform.yml
