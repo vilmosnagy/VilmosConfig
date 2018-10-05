@@ -6,7 +6,7 @@
    - git
    - git-subtree
    - gitk
-   - maven  
+   - maven
    - meld
    - VirtualBox
 #   TODO
@@ -21,3 +21,6 @@
    - openldap-devel
    - jq
    - ftp
+   - gcc-c++
+   - libX11-devel
+   - libxkbfile-devel

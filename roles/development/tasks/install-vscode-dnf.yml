@@ -1,0 +1,7 @@
+- name: "[VSCODE]        | Ensure Visual Studio Code repo present"
+  copy: src=vscode.repo
+        dest=/etc/yum.repos.d/
+        owner=root group=root mode=0644
+
+- name: "[VSCODE]        | Install Visual Studio Code"
+  dnf: name=code

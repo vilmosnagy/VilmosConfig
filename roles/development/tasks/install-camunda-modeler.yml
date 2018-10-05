@@ -35,3 +35,24 @@
     owner: vilmosnagy
     group: vilmosnagy
     mode: 0644
+
+
+- name: "[CAMUNDA]    | Checking that Camunda-TokenSimulation plugin is installed"
+  stat:
+    path: /opt/camunda-modeler/plugins/bpmn-js-token-simulation-plugin
+  register: camunda_modeler_transactions_plugin_installed
+
+- name: "[CAMUNDA]    | Download Camunda-TokenSimulation plugin"
+  when: camunda_modeler_transactions_plugin_installed.stat.exists == False
+  git:
+    repo: https://github.com/philippfromme/bpmn-js-token-simulation-plugin.git
+    dest: /tmp/bpmn-js-token-simulation-plugin
+
+- name: "[CAMUNDA]    | Copy Camunda-TokenSimulation plugin to correct place"
+  when: camunda_modeler_transactions_plugin_installed.stat.exists == False
+  copy:
+    src: /tmp/bpmn-js-token-simulation-plugin
+    dest: /opt/camunda-modeler/plugins/bpmn-js-token-simulation-plugin
+    owner: vilmosnagy
+    group: vilmosnagy
+    mode: 0644
