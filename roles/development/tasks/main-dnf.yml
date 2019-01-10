@@ -13,8 +13,9 @@
 #   - https://www.dbschema.com/download/DbSchema_linux_7_6_5.rpm
    - java-1.8.0-openjdk-src
    - java-1.8.0-openjdk-openjfx
-   - java-9-openjdk
-   - java-9-openjdk-src
+   - java-11-openjdk
+   - java-11-openjdk-devel
+   - java-11-openjdk-src
    - android-tools
    - golang
    - npm
@@ -25,3 +26,4 @@
    - gcc-c++
    - libX11-devel
    - libxkbfile-devel
+   - xorg-x11-server-Xvfb
