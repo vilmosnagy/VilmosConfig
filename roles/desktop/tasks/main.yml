@@ -13,4 +13,10 @@
     path: /home/vilmosnagy/.bashrc
     line: 'HISTFILESIZE=-1'
 
+- name: "Bluetooth   | Disable the Headset Unit Profile"
+  lineinfile:
+    path: /etc/bluetooth/main.conf
+    insertafter: "\\[General\\]"
+    line: 'Disable=Headset'
+
 # TODO add OpenVPN config.

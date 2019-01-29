@@ -8,3 +8,8 @@
 
 - name: "[DOCKER]        | Installing Docker package"
   dnf: name=docker-ce
+
+- name: "[DOCKER]        | Remove the DNF PyYAML package"
+  dnf:
+    name: python2-pyyaml
+    state: absent
