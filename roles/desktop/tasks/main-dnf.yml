@@ -6,10 +6,10 @@
    - https://zoom.us/client/latest/zoom_x86_64.rpm
    - transmission
    - vlc
-   - kodi  
+   - kodi
    - gparted
    - calibre
-   - remmina  
+   - remmina
    - mkvtoolnix
    - gimp
    - unar
@@ -18,3 +18,4 @@
    - wine
    - p7zip
    - unetbootin
+   - eclipse-platform
