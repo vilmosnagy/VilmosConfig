@@ -9,8 +9,7 @@
    - maven
    - meld
    - VirtualBox
-#   TODO
-#   - https://www.dbschema.com/download/DbSchema_linux_7_6_5.rpm
+   - https://www.dbschema.com/download/DbSchema_linux_8_1_6.rpm
    - https://atom.io/download/rpm
    - java-1.8.0-openjdk-src
    - java-1.8.0-openjdk-openjfx
