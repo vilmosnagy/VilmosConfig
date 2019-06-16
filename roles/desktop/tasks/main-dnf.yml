@@ -21,3 +21,4 @@
    - eclipse-platform
    - pdfshuffler
    - fuse-exfat
+   - fuse-sshfs
