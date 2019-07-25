@@ -6,10 +6,9 @@
   with_items:
    - git
    - gitk
-   - maven  
+   - maven
    - meld
    - VirtualBox
-   - java-1.8.0-openjdk-src
    - android-tools
    - golang
    - npm

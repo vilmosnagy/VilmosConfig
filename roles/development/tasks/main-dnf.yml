@@ -11,8 +11,6 @@
    - VirtualBox
    - https://www.dbschema.com/download/DbSchema_linux_8_1_6.rpm
    - https://atom.io/download/rpm
-   - java-1.8.0-openjdk-src
-   - java-1.8.0-openjdk-openjfx
    - java-11-openjdk
    - java-11-openjdk-devel
    - java-11-openjdk-src
@@ -27,3 +25,8 @@
    - libX11-devel
    - libxkbfile-devel
    - xorg-x11-server-Xvfb
+
+- name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
+  lineinfile:
+   path: /home/vilmosnagy/.bashrc
+   line: 'export JAVA_HOME=/usr/lib/jvm/java-11'
