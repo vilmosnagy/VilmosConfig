@@ -1,4 +1,4 @@
-- name: "[BASE APPS]     | Installing usefull applications"
+- name: "[BASE APPS]     | Installing useful applications"
   apt: name={{item}}
   with_items:
    - vim

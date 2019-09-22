@@ -1,9 +1,6 @@
-- name: "[BASE APPS]     | Installing usefull applications"
-  dnf: name={{item}}
-  with_items:
-   - vim
-   - htop
-   - pandoc
+- name: "[BASE APPS]     | Installing useful applications"
+  dnf:
+    name: ['vim', 'htop', 'pandoc']
 
 - name: "[BASE PKGS]     | Installing platform dependent necessary packages"
   dnf: name="{{item}}"
