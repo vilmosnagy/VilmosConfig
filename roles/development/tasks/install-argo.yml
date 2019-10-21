@@ -1,0 +1,5 @@
+- name: "[argo]        | Download argo"
+  get_url:
+    url: https://github.com/argoproj/argo/releases/download/v2.4.1/argo-linux-amd64
+    dest: /usr/local/bin/argo
+    mode: 0775

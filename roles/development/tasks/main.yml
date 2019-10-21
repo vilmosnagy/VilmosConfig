@@ -15,6 +15,7 @@
 - include: install-soapui.yml
 - include: install-kubectl.yml
 - include: install-minikube.yml
+- include: install-argo.yml
 - include: install-helm.yml
 - include: install-terraform.yml
 - include: install-packer.yml
