@@ -1,0 +1,11 @@
+- name: "[GCLOUD]      | Ensure GCloud repo present"
+  copy: src=dnf/repos/gcloud.repo
+    dest=/etc/yum.repos.d/
+    owner=root group=root mode=0644
+
+- name: "[GCLOUD]      | Install the Google cloud CLI tool"
+  when:
+    - ansible_pkg_mgr == 'dnf'
+  dnf: name={{item}}
+  with_items:
+    - google-cloud-sdk
