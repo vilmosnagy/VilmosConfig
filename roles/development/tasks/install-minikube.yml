@@ -1,5 +1,5 @@
 - name: "[MINIKUBE]    | Download minikube"
   get_url:
-    url: https://github.com/kubernetes/minikube/releases/download/v0.25.0/minikube-linux-amd64
+    url: https://github.com/kubernetes/minikube/releases/download/v1.4.0/minikube-linux-amd64
     dest: /usr/local/bin/minikube
     mode: 0775
