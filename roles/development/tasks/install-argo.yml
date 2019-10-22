@@ -3,3 +3,8 @@
     url: https://github.com/argoproj/argo/releases/download/v2.4.1/argo-linux-amd64
     dest: /usr/local/bin/argo
     mode: 0775
+
+- name: "[argo]       | Setup the autocompletition in the bashrc"
+  lineinfile:
+    path: /home/vilmosnagy/.bashrc
+    line: 'source <(argo completion bash)'
