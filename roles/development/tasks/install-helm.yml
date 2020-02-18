@@ -1,11 +1,41 @@
+- name: Create the directory where the Helm v2 downloads
+  file:
+    path: /tmp/helm-v2
+    state: directory
+    mode: '0755'
+
 - name: Retrieve helm binary archive.
   unarchive:
-    src: https://storage.googleapis.com/kubernetes-helm/helm-v2.14.3-linux-amd64.tar.gz
-    dest: /tmp
+    src: https://get.helm.sh/helm-v2.16.3-linux-amd64.tar.gz
+    dest: /tmp/helm-v2
     creates: /usr/local/bin/helm
     remote_src: yes
 
 - name: Move helm binary into place.
-  command: >
-    cp /tmp/linux-amd64/helm /usr/local/bin/helm
-    creates=/usr/local/bin/helm
+  command:
+    cmd: cp /tmp/helm-v2/linux-amd64/helm /usr/local/bin/helm
+    creates: /usr/local/bin/helm
+
+- name: Create the directory where the Helm v3 downloads
+  file:
+    path: /tmp/helm-v3
+    state: directory
+    mode: '0755'
+
+- name: Retrieve helm-v3 binary archive.
+  unarchive:
+    src: https://get.helm.sh/helm-v3.1.0-linux-amd64.tar.gz
+    dest: /tmp/helm-v3
+    creates: /usr/local/bin/helm-v3
+    remote_src: yes
+
+- name: Move helm-v3 binary into place.
+  command:
+    cmd: cp /tmp/helm-v3/linux-amd64/helm /usr/local/bin/helm-v3
+    creates: /usr/local/bin/helm-v3
+
+- name: Retrieve helmfile binary
+  get_url:
+    url: https://github.com/roboll/helmfile/releases/download/v0.100.0/helmfile_linux_amd64
+    dest: /usr/local/bin/helmfile
+    mode: 0775
