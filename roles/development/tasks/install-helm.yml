@@ -39,3 +39,29 @@
     url: https://github.com/roboll/helmfile/releases/download/v0.100.0/helmfile_linux_amd64
     dest: /usr/local/bin/helmfile
     mode: 0775
+
+- name: Install the helm-gcs plugin for helm-v3
+  become: no
+  command:
+    cmd: helm-v3 plugin install https://github.com/hayorov/helm-gcs
+  ignore_errors: yes
+
+- name: Install the helm-diff plugin for helm-v3
+  become: no
+  command:
+    cmd: helm-v3 plugin install https://github.com/databus23/helm-diff --version master
+  ignore_errors: yes
+
+- name: Install the helm-secrets plugin for helm
+  become: no
+  command:
+    cmd: helm plugin install https://github.com/futuresimple/helm-secrets
+  ignore_errors: yes
+
+- name: Install the helm-secrets plugin for helm-v3
+  become: no
+  command:
+    cmd: helm-v3 plugin install https://github.com/futuresimple/helm-secrets
+  ignore_errors: yes
+
+- include: install-helm-sops.yml
