@@ -1,8 +1,10 @@
 - name: "[KUBERNETES]  | Download the latest Kubernetes version"
   get_url:
-    url: "https://storage.googleapis.com/kubernetes-release/release/{{ lookup('url', 'https://storage.googleapis.com/kubernetes-release/release/stable.txt') }}/bin/linux/amd64/kubectl"
+#    url: "https://storage.googleapis.com/kubernetes-release/release/{{ lookup('url', 'https://storage.googleapis.com/kubernetes-release/release/stable.txt') }}/bin/linux/amd64/kubectl"
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.15.1/bin/linux/amd64/kubectl"
     dest: /usr/local/bin/kubectl
     mode: 0775
+    force: yes
 
 - name: "[KUBERNETES]  | Setup the autocompletition in the bashrc"
   lineinfile:
