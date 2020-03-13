@@ -40,6 +40,11 @@
     dest: /usr/local/bin/helmfile
     mode: 0775
 
+- name: "[HELM-v3] Setup the autocompletition in the bashrc"
+  lineinfile:
+    path: /home/vilmosnagy/.bashrc
+    line: 'source <(helm-v3 completion bash)'
+
 - name: Install the helm-gcs plugin for helm-v3
   become: no
   command:

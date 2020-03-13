@@ -4,3 +4,4 @@
     - virtualenv
     - locustio
     - nodeenv
+    - openapi2jsonschema
