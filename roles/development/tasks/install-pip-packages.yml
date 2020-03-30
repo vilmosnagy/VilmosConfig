@@ -1,7 +1,9 @@
 - name: "[PIP]        | Installing pip packages"
-  pip: name={{item}}
-  with_items:
-    - virtualenv
-    - locustio
-    - nodeenv
-    - openapi2jsonschema
+  pip:
+    executable: pip3
+    name:
+      - virtualenv
+      - locustio
+      - nodeenv
+      - openapi2jsonschema
+      - awscli
