@@ -1,30 +1,28 @@
 - include: install-yarn-dnf.yml
 
 - name: "[BASE PKGS]     | Installing general development tools"
-  dnf: name={{item}}
-  with_items:
-   - git
-   - git-subtree
-   - gitk
-   - maven
-   - meld
-   - VirtualBox
-   - https://www.dbschema.com/download/DbSchema_linux_8_1_6.rpm
-   - https://atom.io/download/rpm
-   - java-11-openjdk
-   - java-11-openjdk-devel
-   - java-11-openjdk-src
-   - android-tools
-   - golang
-   - npm
-   - python-devel
-   - openldap-devel
-   - jq
-   - ftp
-   - gcc-c++
-   - libX11-devel
-   - libxkbfile-devel
-   - xorg-x11-server-Xvfb
+  dnf:
+   name:
+     - git
+     - git-subtree
+     - gitk
+     - maven
+     - meld
+     - VirtualBox
+     - java-11-openjdk
+     - java-11-openjdk-devel
+     - java-11-openjdk-src
+     - android-tools
+     - golang
+     - npm
+     - python-devel
+     - openldap-devel
+     - jq
+     - ftp
+     - gcc-c++
+     - libX11-devel
+     - libxkbfile-devel
+     - xorg-x11-server-Xvfb
 
 - name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
   lineinfile:

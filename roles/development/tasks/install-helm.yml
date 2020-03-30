@@ -24,7 +24,7 @@
 
 - name: Retrieve helm-v3 binary archive.
   unarchive:
-    src: https://get.helm.sh/helm-v3.1.0-linux-amd64.tar.gz
+    src: https://get.helm.sh/helm-v3.1.2-linux-amd64.tar.gz
     dest: /tmp/helm-v3
     creates: /usr/local/bin/helm-v3
     remote_src: yes

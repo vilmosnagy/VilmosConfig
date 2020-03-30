@@ -1,0 +1,19 @@
+- name: "[RCLONE]      | Create folder for rclone"
+  file:
+    path: "/tmp/rclone"
+    recurse: yes
+    state: directory
+
+- name: "[RCLONE]      | Download rclone"
+  unarchive:
+    src: https://downloads.rclone.org/rclone-current-linux-amd64.zip
+    dest: /tmp/rclone
+    remote_src: yes
+
+- name: "[RCLONE]      | Move rclone to the path"
+  copy:
+    src: "{{ item }}"
+    dest: /usr/local/bin/rclone
+    mode: 0775
+  with_fileglob:
+    - "/tmp/rclone/*/rclone"
