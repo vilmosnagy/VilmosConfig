@@ -5,3 +5,5 @@
   when: ansible_pkg_mgr == 'apt'
 
 - include: install-thefuck.yml
+
+- include: install-snap-packages.yml

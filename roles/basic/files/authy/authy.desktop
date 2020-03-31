@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Authy
+Exec=/var/lib/snapd/snap/authy/current/authy
+Terminal=false
+Type=Application
+Categories=Development;
