@@ -25,4 +25,5 @@
 - include: install-gcloud.yml
 - include: install-camunda-modeler.yml
 - include: install-pip-packages.yml
+- include: install-starship-shell.yml
 - include: config-git-hooks.yml

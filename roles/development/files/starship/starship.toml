@@ -1,0 +1,4 @@
+[kubernetes]
+      symbol = "⛵ "
+      style = "bold white"
+      disabled = false

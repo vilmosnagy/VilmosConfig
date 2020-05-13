@@ -1,0 +1,18 @@
+- name: "[STARSHIP]   | Download starship"
+  unarchive:
+    src: https://github.com/starship/starship/releases/download/v0.41.0/starship-x86_64-unknown-linux-gnu.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+    mode: 0775
+
+- name: "[STARSHIP]  | Finish the setup in the bashrc"
+  lineinfile:
+    path: /home/vilmosnagy/.bashrc
+    line: 'eval "$(starship init bash)"'
+
+- name: "[STARSHIP]  | Copy the setup to the correct location"
+  copy:
+    src: starship/starship.toml
+    dest: /home/vilmosnagy/.config/starship.toml
+
+

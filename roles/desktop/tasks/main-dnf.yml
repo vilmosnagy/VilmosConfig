@@ -14,7 +14,6 @@
    - mkvtoolnix
    - gimp
    - unar
-   - steam
    - easy-rsa
    - wine
    - p7zip
@@ -23,3 +22,8 @@
    - pdfshuffler
    - fuse-exfat
    - fuse-sshfs
+
+- name: Install Steam
+  flatpak:
+   name: com.valvesoftware.Steam
+   state: present

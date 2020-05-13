@@ -7,3 +7,4 @@
       - nodeenv
       - openapi2jsonschema
       - awscli
+      - json-delta
