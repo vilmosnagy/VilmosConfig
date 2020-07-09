@@ -23,6 +23,8 @@
      - libX11-devel
      - libxkbfile-devel
      - xorg-x11-server-Xvfb
+     - guilt
+     - stgit
 
 - name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
   lineinfile:
