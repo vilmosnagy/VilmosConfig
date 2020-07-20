@@ -13,7 +13,6 @@
 - name: "[RCLONE]      | Move rclone to the path"
   copy:
     src: "{{ item }}"
-    dest: /usr/local/bin/rclone
+    dest: /usr/bin/rclone
     mode: 0775
-  with_fileglob:
-    - "/tmp/rclone/*/rclone"
+  with_items: "{{ '/tmp/rclone/*/rclone' | fileglob }}"
