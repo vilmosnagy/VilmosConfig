@@ -5,6 +5,7 @@
    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
    - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2019.02.14-1.fedora.x86_64.rpm
    - https://zoom.us/client/latest/zoom_x86_64.rpm
+   - https://github.com/kaikramer/keystore-explorer/releases/download/v5.4.3/kse-5.4.3.rpm
    - transmission
    - vlc
    - kodi
