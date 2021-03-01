@@ -3,7 +3,7 @@
     executable: pip3
     name:
       - virtualenv
-      - locustio
+      - locust
       - nodeenv
       - openapi2jsonschema
       - awscli

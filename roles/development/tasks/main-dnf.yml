@@ -4,6 +4,7 @@
   dnf:
    name:
      - git
+     - git-lfs
      - git-subtree
      - gitk
      - maven
@@ -25,6 +26,8 @@
      - xorg-x11-server-Xvfb
      - guilt
      - stgit
+     - podman
+     - buildah
 
 - name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
   lineinfile:
