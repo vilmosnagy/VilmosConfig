@@ -1,6 +1,6 @@
 - name: install the SOPS rpm from a remote repo
   dnf:
-    name: 'https://github.com/mozilla/sops/releases/download/v3.5.0/sops-v3.5.0-1.x86_64.rpm'
+    name: 'https://github.com/mozilla/sops/releases/download/v3.7.1/sops-3.7.1-1.x86_64.rpm'
     state: present
   when:
     - ansible_pkg_mgr == 'dnf'

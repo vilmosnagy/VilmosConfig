@@ -5,19 +5,19 @@
   pip:
    name: docker-compose
 
-- name: "[DOCKER]        | Create docker group"
-  group:
-    name: docker
-    state: present
-
-- name: "[DOCKER]        | Adding user vilmosnagy to Docker group"
-  user:
-    name: vilmosnagy
-    groups:
-      - docker
-    append: yes
-
-- name: "[DOCKER]        | Enable Docker service to start on boot"
-  systemd:
-   name: docker.service
-   enabled: yes
+#- name: "[DOCKER]        | Create docker group"
+#  group:
+#    name: docker
+#    state: present
+#
+#- name: "[DOCKER]        | Adding user vilmosnagy to Docker group"
+#  user:
+#    name: vilmosnagy
+#    groups:
+#      - docker
+#    append: yes
+#
+#- name: "[DOCKER]        | Enable Docker service to start on boot"
+#  systemd:
+#   name: docker.service
+#   enabled: yes

@@ -1,0 +1,11 @@
+- name: "[GCLOUD]      | Ensure Azure repo present"
+  copy: src=dnf/repos/microsoft.repo
+    dest=/etc/yum.repos.d/
+    owner=root group=root mode=0644
+
+- name: "[GCLOUD]      | Install the Azure CLI tool"
+  when:
+    - ansible_pkg_mgr == 'dnf'
+  dnf: name={{item}}
+  with_items:
+    - azure-cli

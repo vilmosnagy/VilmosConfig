@@ -1,15 +1,15 @@
-- name: "[DOCKER]        | Adding Docker repository"
-  get_url:
-    url: https://download.docker.com/linux/fedora/docker-ce.repo
-    dest: /etc/yum.repos.d/
-    owner: root
-    group: root
-    mode: 0644
+#- name: "[DOCKER]        | Adding Docker repository"
+#  get_url:
+#    url: https://download.docker.com/linux/fedora/docker-ce.repo
+#    dest: /etc/yum.repos.d/
+#    owner: root
+#    group: root
+#    mode: 0644
 
 - name: "[DOCKER]        | Installing Docker package"
-  dnf: name=docker-ce
+  dnf: name=podman-docker
 
-- name: "[DOCKER]        | Remove the DNF PyYAML package"
-  dnf:
-    name: python2-pyyaml
-    state: absent
+#- name: "[DOCKER]        | Remove the DNF PyYAML package"
+#  dnf:
+#    name: python2-pyyaml
+#    state: absent
