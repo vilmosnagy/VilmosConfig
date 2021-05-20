@@ -19,6 +19,7 @@
     - unetbootin
     - pdfshuffler
     - fuse-sshfs
+    - nethogs
 
 - name: Add the flathub flatpak repository remote to the system installation
   flatpak_remote:
@@ -43,3 +44,4 @@
    - com.valvesoftware.Steam
    - org.videolan.VLC
    - org.openstreetmap.josm
+   - org.gnome.FileRoller
