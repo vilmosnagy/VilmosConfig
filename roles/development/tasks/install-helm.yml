@@ -24,7 +24,7 @@
 
 - name: Retrieve helm-v3 binary archive.
   unarchive:
-    src: https://get.helm.sh/helm-v3.3.0-linux-amd64.tar.gz
+    src: https://get.helm.sh/helm-v3.5.4-linux-amd64.tar.gz
     dest: /tmp/helm-v3
     remote_src: yes
 
@@ -34,9 +34,10 @@
 
 - name: Retrieve helmfile binary
   get_url:
-    url: https://github.com/roboll/helmfile/releases/download/v0.125.7/helmfile_linux_amd64
+    url: https://github.com/roboll/helmfile/releases/download/v0.139.7/helmfile_linux_amd64
     dest: /usr/local/bin/helmfile
     mode: 0775
+    force: yes
 
 - name: "[HELM-v3] Setup the autocompletition in the bashrc"
   lineinfile:
