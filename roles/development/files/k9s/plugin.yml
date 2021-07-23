@@ -1,0 +1,121 @@
+plugin:
+  argo-watch:
+    shortCut: Shift-W
+    description: Watch Workflow
+    scopes:
+      - wf
+    background: false
+    command: /home/vilmosnagy/.k9s/wait-after-exit.sh
+    args:
+      - argo
+      - watch
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME
+  argo-retry:
+    shortCut: Shift-R
+    description: Retry Workflow
+    scopes:
+      - wf
+    background: false
+    command: /home/vilmosnagy/.k9s/wait-after-exit.sh
+    args:
+      - argo
+      - retry
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME
+  argo-resubmit:
+    shortCut: Shift-S
+    description: Resubmit Workflow
+    scopes:
+      - wf
+    background: false
+    command: /home/vilmosnagy/.k9s/wait-after-exit.sh
+    args:
+      - argo
+      - resubmit
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME
+  argo-resume:
+    shortCut: Shift-M
+    description: Resume Workflow
+    scopes:
+      - wf
+    background: false
+    command: /home/vilmosnagy/.k9s/wait-after-exit.sh
+    args:
+      - argo
+      - resume
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME
+  argo-terminate:
+    shortCut: Shift-T
+    description: Terminate Workflow
+    scopes:
+      - wf
+    background: false
+    command: /home/vilmosnagy/.k9s/wait-after-exit.sh
+    args:
+      - argo
+      - terminate
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME
+  helm-delete:
+    shortCut: Shift-D
+    description: Delete Helm Chart
+    scopes:
+      - helm
+    background: false
+    command: /home/vilmosnagy/.k9s/wait-after-exit.sh
+    args:
+      - helm
+      - --kube-context
+      - $CONTEXT
+      - --namespace
+      - $NAMESPACE
+      - delete
+      - $NAME
+  ksniff:
+    shortCut: Shift-S
+    description: "Sniff"
+    scopes:
+      - containers
+    command: kubectl
+    background: true
+    args:
+      - sniff
+      - $POD
+      - -n
+      - $NAMESPACE
+      - -c
+      - $COL0
+  argo-logs:
+    shortCut: Shift-L
+    description: Workflow logs
+    scopes:
+      - wf
+    background: false
+    command: /home/zsombor/.k9s/wait-after-exit.sh
+    args:
+      - argo
+      - logs
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+      - $NAME
+      - --follow

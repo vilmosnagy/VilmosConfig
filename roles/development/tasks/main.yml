@@ -28,3 +28,4 @@
 - include: install-pip-packages.yml
 - include: install-starship-shell.yml
 - include: config-git-hooks.yml
+- include: install-k9s.yml

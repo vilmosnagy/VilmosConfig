@@ -31,6 +31,8 @@
      - stgit
      - podman
      - buildah
+     - pipenv
+     - telnet
 
 - name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
   lineinfile:

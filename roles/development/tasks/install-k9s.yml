@@ -1,0 +1,31 @@
+- name: Create the k9s config dir
+  file:
+    path: /home/vilmosnagy/.k9s/
+    state: directory
+    mode: '0755'
+
+- name: "[install]                : K9S"
+  unarchive:
+    src: "https://github.com/derailed/k9s/releases/download/{{ k9s_version }}/k9s_Linux_x86_64.tar.gz"
+    dest: "/usr/local/bin/"
+    remote_src: yes
+    exclude:
+      - README.md
+      - LICENSE
+    mode: u=rwx,g=rx,o=rx
+
+- name: "[install]                : K9S - plugins"
+  copy:
+    src: 'k9s/plugin.yml'
+    dest: "/home/vilmosnagy/.k9s/plugin.yml"
+    owner: "vilmosnagy"
+    group: "vilmosnagy"
+    mode: 060
+
+- name: "[install]                : K9S - wait-after-exit file"
+  copy:
+    src: 'k9s/wait-after-exit.sh'
+    dest: "/home/vilmosnagy/.k9s/wait-after-exit.sh"
+    owner: "vilmosnagy"
+    group: "vilmosnagy"
+    mode: 0755

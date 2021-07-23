@@ -34,7 +34,7 @@
 
 - name: Retrieve helmfile binary
   get_url:
-    url: https://github.com/roboll/helmfile/releases/download/v0.139.7/helmfile_linux_amd64
+    url: https://github.com/roboll/helmfile/releases/download/v0.139.9/helmfile_linux_amd64
     dest: /usr/local/bin/helmfile
     mode: 0775
     force: yes
