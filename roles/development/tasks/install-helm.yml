@@ -24,7 +24,7 @@
 
 - name: Retrieve helm-v3 binary archive.
   unarchive:
-    src: https://get.helm.sh/helm-v3.5.4-linux-amd64.tar.gz
+    src: https://get.helm.sh/helm-v3.12.2-linux-amd64.tar.gz
     dest: /tmp/helm-v3
     remote_src: yes
 
@@ -32,12 +32,23 @@
   command:
     cmd: cp /tmp/helm-v3/linux-amd64/helm /usr/local/bin/helm-v3
 
-- name: Retrieve helmfile binary
-  get_url:
-    url: https://github.com/roboll/helmfile/releases/download/v0.139.9/helmfile_linux_amd64
+- name: Create the directory where the helmfile downloads
+  file:
+    path: /tmp/helmfile
+    state: directory
+    mode: '0755'
+
+- name: Retrieve helmfile binary archive.
+  unarchive:
+    src: https://github.com/helmfile/helmfile/releases/download/v0.155.1/helmfile_0.155.1_linux_amd64.tar.gz
+    dest: /tmp/helmfile
+    remote_src: yes
+    
+- name: Move helmfile binary into place.
+  ansible.builtin.copy:
+    src: /tmp/helmfile/helmfile
     dest: /usr/local/bin/helmfile
     mode: 0775
-    force: yes
 
 - name: "[HELM-v3] Setup the autocompletition in the bashrc"
   lineinfile:
