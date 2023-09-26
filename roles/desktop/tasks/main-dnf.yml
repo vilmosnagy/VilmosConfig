@@ -18,6 +18,7 @@
     - nethogs
     - gopass
     - gopass-jsonapi
+    - xclip
 
 - name: Add the flathub flatpak repository remote to the system installation
   flatpak_remote:

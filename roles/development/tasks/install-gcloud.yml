@@ -9,3 +9,4 @@
   dnf: name={{item}}
   with_items:
     - google-cloud-sdk
+    - google-cloud-sdk-gke-gcloud-auth-plugin
