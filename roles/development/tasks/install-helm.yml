@@ -1,21 +1,3 @@
-- name: Create the directory where the Helm v2 downloads
-  file:
-    path: /tmp/helm-v2
-    state: directory
-    mode: '0755'
-
-- name: Retrieve helm binary archive.
-  unarchive:
-    src: https://get.helm.sh/helm-v2.16.3-linux-amd64.tar.gz
-    dest: /tmp/helm-v2
-    creates: /usr/local/bin/helm
-    remote_src: yes
-
-- name: Move helm binary into place.
-  command:
-    cmd: cp /tmp/helm-v2/linux-amd64/helm /usr/local/bin/helm
-    creates: /usr/local/bin/helm
-
 - name: Create the directory where the Helm v3 downloads
   file:
     path: /tmp/helm-v3
@@ -24,13 +6,13 @@
 
 - name: Retrieve helm-v3 binary archive.
   unarchive:
-    src: https://get.helm.sh/helm-v3.12.2-linux-amd64.tar.gz
+    src: https://get.helm.sh/helm-v3.12.3-linux-amd64.tar.gz
     dest: /tmp/helm-v3
     remote_src: yes
 
 - name: Move helm-v3 binary into place.
   command:
-    cmd: cp /tmp/helm-v3/linux-amd64/helm /usr/local/bin/helm-v3
+    cmd: cp /tmp/helm-v3/linux-amd64/helm /usr/local/bin/helm
 
 - name: Create the directory where the helmfile downloads
   file:
@@ -53,30 +35,24 @@
 - name: "[HELM-v3] Setup the autocompletition in the bashrc"
   lineinfile:
     path: /home/vilmosnagy/.bashrc
-    line: 'source <(helm-v3 completion bash)'
+    line: 'source <(helm completion bash)'
 
 - name: Install the helm-gcs plugin for helm-v3
   become: no
   command:
-    cmd: helm-v3 plugin install https://github.com/hayorov/helm-gcs
+    cmd: helm plugin install https://github.com/hayorov/helm-gcs
   ignore_errors: yes
 
 - name: Install the helm-diff plugin for helm-v3
   become: no
   command:
-    cmd: helm-v3 plugin install https://github.com/databus23/helm-diff --version master
+    cmd: helm plugin install https://github.com/databus23/helm-diff --version master
   ignore_errors: yes
 
 - name: Install the helm-secrets plugin for helm
   become: no
   command:
     cmd: helm plugin install https://github.com/futuresimple/helm-secrets
-  ignore_errors: yes
-
-- name: Install the helm-secrets plugin for helm-v3
-  become: no
-  command:
-    cmd: helm-v3 plugin install https://github.com/futuresimple/helm-secrets
   ignore_errors: yes
 
 - include: install-helm-sops.yml

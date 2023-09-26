@@ -8,7 +8,7 @@
 - name: "[JETBRAINS]     | Download JetBrains toolbox"
   when: stat_result.stat.exists == False
   unarchive:
-   src: https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.2.2314.tar.gz 
+   src: https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.0.4.17212.tar.gz 
    dest: /tmp/
    remote_src: True
 

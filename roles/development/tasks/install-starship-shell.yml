@@ -15,4 +15,7 @@
     src: starship/starship.toml
     dest: /home/vilmosnagy/.config/starship.toml
 
+- name: "[STARSHIP]        | Install OpenSSL for Starship shell"
+  dnf: name=openssl1.1
+
 

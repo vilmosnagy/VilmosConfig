@@ -3,8 +3,8 @@
     executable: pip3
     name:
       - virtualenv
-      - locust
-      - nodeenv
-      - openapi2jsonschema
-      - awscli
-      - json-delta
+        #      - locust
+        #      - nodeenv
+        #      - openapi2jsonschema
+        #      - awscli
+        #      - json-delta

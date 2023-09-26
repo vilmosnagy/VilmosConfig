@@ -1,5 +1,5 @@
-- name: "[K3D]         | Download the latest K3D version"
-  get_url:
-    url: "https://github.com/rancher/k3d/releases/download/v1.3.4/k3d-linux-amd64"
-    dest: /usr/local/bin/k3d
-    mode: 0775
+#- name: "[K3D]         | Download the latest K3D version"
+#  get_url:
+#    url: "https://github.com/rancher/k3d/releases/download/v1.3.4/k3d-linux-amd64"
+#    dest: /usr/local/bin/k3d
+#    mode: 0775

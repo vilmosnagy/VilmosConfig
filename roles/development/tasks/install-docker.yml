@@ -1,9 +1,9 @@
-- include: install-docker-dnf.yml
-  when: ansible_pkg_mgr == 'dnf'
+# - include: install-docker-dnf.yml
+#   when: ansible_pkg_mgr == 'dnf'
 
-- name: "[DOCKER]        | Installing Docker compose"
-  pip:
-   name: docker-compose
+# - name: "[DOCKER]        | Installing Docker compose"
+#  pip:
+#   name: docker-compose
 
 #- name: "[DOCKER]        | Create docker group"
 #  group:

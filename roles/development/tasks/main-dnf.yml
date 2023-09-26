@@ -37,4 +37,4 @@
 - name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
   lineinfile:
    path: /home/vilmosnagy/.bashrc
-   line: 'export JAVA_HOME=/usr/lib/jvm/java-11'
+   line: 'export JAVA_HOME=/usr/lib/jvm/java-17'

@@ -2,8 +2,7 @@
   dnf:
    disable_gpg_check: yes
    name:
-    - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm
-    - https://github.com/kaikramer/keystore-explorer/releases/download/v5.4.4/kse-5.4.4-1.noarch.rpm
+     #    - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2023.09.06-1.fedora.x86_64.rpm 
     - transmission
     - gparted
     - calibre
@@ -17,6 +16,8 @@
     - pdfshuffler
     - fuse-sshfs
     - nethogs
+    - gopass
+    - gopass-jsonapi
 
 - name: Add the flathub flatpak repository remote to the system installation
   flatpak_remote:

@@ -9,11 +9,3 @@
   lineinfile:
     path: /home/vilmosnagy/.bashrc
     line: 'source <(kubectl completion bash)'
-
-- name: "[KUBERNETES]  | Setup the autocompletition in the bashrc"
-  blockinfile:
-    path: /home/vilmosnagy/.bashrc
-    block: |
-      for filename in $HOME/.kube/configs/*; do
-          export export KUBECONFIG=${KUBECONFIG:-$HOME/.kube/config}:$filename
-      done
