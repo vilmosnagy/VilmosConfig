@@ -1,8 +1,8 @@
 - name: "[BASE PKGS]     | Ensure that general desktop applications present"
   dnf:
-   disable_gpg_check: yes
    name:
-     #    - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2023.09.06-1.fedora.x86_64.rpm 
+    # TODO this does not work somehow
+    # - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2023.09.06-1.fedora.x86_64.rpm
     - transmission
     - gparted
     - calibre
