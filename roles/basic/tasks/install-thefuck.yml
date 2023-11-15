@@ -1,4 +1,4 @@
-- include: install-thefuck-dnf.yml
+- include_tasks: install-thefuck-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
 - name: "[TheFuck]       | Removing TheFuck with pip2"

@@ -6,7 +6,7 @@
 
 - name: Retrieve helm-v3 binary archive.
   unarchive:
-    src: https://get.helm.sh/helm-v3.12.3-linux-amd64.tar.gz
+    src: https://get.helm.sh/helm-v3.13.2-linux-amd64.tar.gz
     dest: /tmp/helm-v3
     remote_src: yes
 
@@ -22,7 +22,7 @@
 
 - name: Retrieve helmfile binary archive.
   unarchive:
-    src: https://github.com/helmfile/helmfile/releases/download/v0.155.1/helmfile_0.155.1_linux_amd64.tar.gz
+    src: https://github.com/helmfile/helmfile/releases/download/v0.158.1/helmfile_0.158.1_linux_amd64.tar.gz
     dest: /tmp/helmfile
     remote_src: yes
     
@@ -55,4 +55,4 @@
     cmd: helm plugin install https://github.com/futuresimple/helm-secrets
   ignore_errors: yes
 
-- include: install-helm-sops.yml
+- include_tasks: install-helm-sops.yml

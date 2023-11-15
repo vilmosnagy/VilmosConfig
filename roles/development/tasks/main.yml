@@ -1,31 +1,30 @@
-- include: install-dotnet.yml
-- include: install-vscode.yml
+- include_tasks: install-dotnet.yml
+- include_tasks: install-vscode.yml
 
-- include: main-dnf.yml
+- include_tasks: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
-- include: main-apt.yml
+- include_tasks: main-apt.yml
   when: ansible_pkg_mgr == 'apt'
 
-- include: install-docker.yml
-- include: install-npm-packages.yml
-- include: install-dbschema.yml
-- include: install-intellij.yml
-- include: install-postman.yml
-- include: install-soapui.yml
-- include: install-kubectl.yml
-- include: install-rclone.yml
-- include: install-minikube.yml
-- include: install-k3d.yml
-- include: install-argo.yml
-- include: install-helm.yml
-- include: install-terraform.yml
-- include: install-packer.yml
-- include: install-heroku.yml
-- include: install-gcloud.yml
-- include: install-azure.yml
-#- include: install-camunda-modeler.yml
-- include: install-pip-packages.yml
-- include: install-starship-shell.yml
-- include: config-git-hooks.yml
-- include: install-k9s.yml
+- include_tasks: install-docker.yml
+- include_tasks: install-npm-packages.yml
+- include_tasks: install-dbschema.yml
+- include_tasks: install-intellij.yml
+- include_tasks: install-postman.yml
+- include_tasks: install-soapui.yml
+- include_tasks: install-kubectl.yml
+- include_tasks: install-rclone.yml
+- include_tasks: install-minikube.yml
+- include_tasks: install-k3d.yml
+- include_tasks: install-argo.yml
+- include_tasks: install-helm.yml
+- include_tasks: install-terraform.yml
+- include_tasks: install-packer.yml
+- include_tasks: install-gcloud.yml
+- include_tasks: install-azure.yml
+#- include_tasks: install-camunda-modeler.yml
+- include_tasks: install-pip-packages.yml
+- include_tasks: install-starship-shell.yml
+- include_tasks: config-git-hooks.yml
+- include_tasks: install-k9s.yml

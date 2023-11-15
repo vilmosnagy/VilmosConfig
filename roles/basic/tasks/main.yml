@@ -1,9 +1,9 @@
-- include: main-dnf.yml
+- include_tasks: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
-- include: main-apt.yml
+- include_tasks: main-apt.yml
   when: ansible_pkg_mgr == 'apt'
 
-- include: install-thefuck.yml
+- include_tasks: install-thefuck.yml
 
-- include: install-snap-packages.yml
+- include_tasks: install-snap-packages.yml

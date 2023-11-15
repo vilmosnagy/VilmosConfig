@@ -1,6 +1,6 @@
-- include: install-chrome.yml
+- include_tasks: install-chrome.yml
 
-- include: main-dnf.yml
+- include_tasks: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
 - name: "BASH Config | HISTSIZE"

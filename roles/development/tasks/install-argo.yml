@@ -1,8 +1,30 @@
+- name: Delete existing dist folder
+  file:
+    path: "/tmp/argo"
+    state: absent
+
+- name: "[argo]        | Create the dir for argo download"
+  file:
+    path: /tmp/argo
+    state: directory
+    mode: '0755'
+
 - name: "[argo]        | Download argo"
   get_url:
-    url: https://github.com/argoproj/argo-workflows/releases/download/v2.6.1/argo-linux-amd64
-    dest: /usr/local/bin/argo
-    mode: 0775
+    url: "https://github.com/argoproj/argo-workflows/releases/download/v3.5.1/argo-linux-amd64.gz"
+    dest: /tmp/argo
+
+- name: "[argo]        | Gunzip argo"
+  command:
+    cmd: gunzip /tmp/argo/argo-linux-amd64.gz
+
+- name: "[argo]        | Move argo binary into place."
+  command:
+    cmd: cp /tmp/argo/argo-linux-amd64 /usr/local/bin/argo
+
+- name: "[argo]        | run chmod"
+  command:
+    cmd: chmod 755 /usr/local/bin/argo
 
 - name: "[argo]       | Setup the autocompletition in the bashrc"
   lineinfile:

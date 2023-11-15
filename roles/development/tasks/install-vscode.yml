@@ -1,2 +1,2 @@
-- include: install-vscode-dnf.yml
+- include_tasks: install-vscode-dnf.yml
   when: ansible_pkg_mgr == 'dnf'

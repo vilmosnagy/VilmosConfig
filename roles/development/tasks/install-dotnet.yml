@@ -1,2 +1,2 @@
-- include: install-dotnet-dnf.yml
+- include_tasks: install-dotnet-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
