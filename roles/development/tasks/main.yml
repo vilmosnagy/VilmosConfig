@@ -28,3 +28,4 @@
 - include_tasks: install-starship-shell.yml
 - include_tasks: config-git-hooks.yml
 - include_tasks: install-k9s.yml
+- include_tasks: install-cloudflared.yml
