@@ -9,13 +9,6 @@
      - gitk
      - maven
      - meld
-#     - VirtualBox
-     - java-11-openjdk
-     - java-11-openjdk-devel
-     - java-11-openjdk-src
-     - java-17-openjdk
-     - java-17-openjdk-devel
-     - java-17-openjdk-src
      - java-21-openjdk
      - java-21-openjdk-devel
      - java-21-openjdk-src
@@ -42,7 +35,7 @@
 - name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
   lineinfile:
    path: /home/vilmosnagy/.bashrc
-   line: 'export JAVA_HOME=/usr/lib/jvm/java-17'
+   line: 'export JAVA_HOME=/usr/lib/jvm/java-22'
 
 - name: "[GO]          | Create $HOME/.go dir"
   ansible.builtin.file:
