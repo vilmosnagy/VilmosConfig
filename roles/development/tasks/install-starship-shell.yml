@@ -1,6 +1,6 @@
 - name: "[STARSHIP]   | Download starship"
   unarchive:
-    src: https://github.com/starship/starship/releases/download/v1.16.0/starship-x86_64-unknown-linux-gnu.tar.gz
+    src: https://github.com/starship/starship/releases/download/v1.20.1/starship-x86_64-unknown-linux-gnu.tar.gz
     dest: /usr/local/bin
     remote_src: yes
     mode: 0775
