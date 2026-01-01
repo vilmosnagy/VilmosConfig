@@ -11,7 +11,7 @@
 
 - name: "[argo]        | Download argo"
   get_url:
-    url: "https://github.com/argoproj/argo-workflows/releases/download/v3.5.1/argo-linux-amd64.gz"
+    url: "https://github.com/argoproj/argo-workflows/releases/download/v3.7.6/argo-linux-amd64.gz"
     dest: /tmp/argo
 
 - name: "[argo]        | Gunzip argo"

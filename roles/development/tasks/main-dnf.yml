@@ -35,7 +35,7 @@
 - name: "[MAVEN]       | Export the JAVA_HOME envvar for maven"
   lineinfile:
    path: /home/vilmosnagy/.bashrc
-   line: 'export JAVA_HOME=/usr/lib/jvm/java-22'
+   line: 'export JAVA_HOME=/usr/lib/jvm/java-25'
 
 - name: "[GO]          | Create $HOME/.go dir"
   ansible.builtin.file:

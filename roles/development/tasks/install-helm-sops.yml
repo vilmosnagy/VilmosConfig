@@ -1,7 +1,7 @@
 # TODO
 - name: install the SOPS rpm from a remote repo
   dnf:
-    name: 'https://github.com/getsops/sops/releases/download/v3.8.1/sops-3.8.1.x86_64.rpm'
+    name: 'https://github.com/getsops/sops/releases/download/v3.11.0/sops-3.11.0.x86_64.rpm'
     state: present
     disable_gpg_check: true
   when:

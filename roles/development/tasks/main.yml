@@ -8,11 +8,9 @@
   when: ansible_pkg_mgr == 'apt'
 
 - include_tasks: install-docker.yml
-- include_tasks: install-npm-packages.yml
 - include_tasks: install-dbschema.yml
 - include_tasks: install-intellij.yml
 - include_tasks: install-postman.yml
-- include_tasks: install-soapui.yml
 - include_tasks: install-kubectl.yml
 - include_tasks: install-rclone.yml
 - include_tasks: install-minikube.yml
@@ -23,7 +21,6 @@
 - include_tasks: install-packer.yml
 - include_tasks: install-gcloud.yml
 - include_tasks: install-azure.yml
-#- include_tasks: install-camunda-modeler.yml
 - include_tasks: install-pip-packages.yml
 - include_tasks: install-starship-shell.yml
 - include_tasks: config-git-hooks.yml
