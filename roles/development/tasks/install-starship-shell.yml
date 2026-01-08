@@ -16,6 +16,11 @@
     dest: /home/vilmosnagy/.config/starship.toml
 
 - name: "[STARSHIP]        | Install OpenSSL for Starship shell"
+  when: ansible_pkg_mgr == 'dnf'
   dnf: name=openssl1.1
+
+- name: "[STARSHIP]        | Install OpenSSL for Starship shell"
+  when: ansible_pkg_mgr == 'aps'
+  apt: name=openssl
 
 

@@ -5,3 +5,8 @@
   when: ansible_pkg_mgr == 'apt'
 
 - include_tasks: install-thefuck.yml
+
+- name: "[BASE APPS]     | Set vim as the default editor"
+  lineinfile:
+    path: /home/vilmosnagy/.bashrc
+    line: 'export EDITOR=vim'

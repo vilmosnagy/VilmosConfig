@@ -1,8 +1,3 @@
 - name: "[BASE APPS]     | Installing useful applications"
   dnf:
     name: ['vim', 'htop', 'snapd']
-
-- name: "[BASE APPS]     | Set vim as the default editor"
-  lineinfile:
-    path: /home/vilmosnagy/.bashrc
-    line: 'export EDITOR=vim'

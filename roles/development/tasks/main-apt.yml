@@ -1,16 +1,10 @@
-# TODO
-# - include_tasks: install-yarn-dnf.yml
-
 - name: "[BASE PKGS]     | Installing general development tools"
-  dnf: name={{item}}
+  apt: name={{item}}
   with_items:
    - git
    - gitk
    - maven
    - meld
-   - VirtualBox
-   - android-tools
    - golang
    - npm
-   - python-devel
-   - openldap-devel
+   - python3-dev

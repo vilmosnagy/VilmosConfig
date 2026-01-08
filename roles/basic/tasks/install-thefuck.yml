@@ -1,15 +1,15 @@
 - include_tasks: install-thefuck-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
-- name: "[TheFuck]       | Removing TheFuck with pip2"
-  pip:
-    name: thefuck
-    state: absent
+- include_tasks: install-thefuck-apt.yml
+  when: ansible_pkg_mgr == 'apt'
 
-- name: "[TheFuck]       | Installing TheFuck with pip3"
-  pip:
-    name: thefuck
-    executable: pip3
+# solve this with `uv`... https://github.com/nvbn/thefuck/pull/1534#issuecomment-3497909465
+# - name: "[TheFuck]       | Installing TheFuck with pip3"
+#   ansible.builtin.pip:
+#     name: thefuck
+#     executable: pip3
+#     extra_args: --user
 
 - name: "[TheFuck]       | Include TheFuck registration into bashrc"
   lineinfile:

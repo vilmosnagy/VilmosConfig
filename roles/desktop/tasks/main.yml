@@ -3,6 +3,9 @@
 - include_tasks: main-dnf.yml
   when: ansible_pkg_mgr == 'dnf'
 
+- include_tasks: main-apt.yml
+  when: ansible_pkg_mgr == 'apt'
+
 - name: "BASH Config | HISTSIZE"
   lineinfile:
     path: /home/vilmosnagy/.bashrc
@@ -13,10 +16,10 @@
     path: /home/vilmosnagy/.bashrc
     line: 'HISTFILESIZE=-1'
 
-- name: "Bluetooth   | Disable the Headset Unit Profile"
-  lineinfile:
-    path: /etc/bluetooth/main.conf
-    insertafter: "\\[General\\]"
-    line: 'Disable=Headset'
+#- name: "Bluetooth   | Disable the Headset Unit Profile"
+#  lineinfile:
+#    path: /etc/bluetooth/main.conf
+#    insertafter: "\\[General\\]"
+#    line: 'Disable=Headset'
 
 # TODO add OpenVPN config.

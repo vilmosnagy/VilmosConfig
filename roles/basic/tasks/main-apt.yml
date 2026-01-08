@@ -1,5 +1,6 @@
 - name: "[BASE APPS]     | Installing useful applications"
   apt: name={{item}}
+  become: yes
   with_items:
    - vim
    - htop

@@ -37,22 +37,71 @@
     path: /home/vilmosnagy/.bashrc
     line: 'source <(helm completion bash)'
 
+- name: Uninstall the helm-gcs plugin for helm
+  become: no
+  command:
+    cmd: helm plugin uninstall gcs
+  ignore_errors: yes
+
 - name: Install the helm-gcs plugin for helm
   become: no
   command:
     cmd: helm plugin install https://github.com/hayorov/helm-gcs --verify=false
+
+- name: Uninstall the helm-diff plugin for helm
+  become: no
+  command:
+    cmd: helm plugin uninstall diff
   ignore_errors: yes
 
 - name: Install the helm-diff plugin for helm
   become: no
   command:
     cmd: helm plugin install https://github.com/databus23/helm-diff --version v3.14.1 --verify=false
+
+- name: Uninstall the helm-secrets plugin for helm
+  become: no
+  command:
+    cmd: helm plugin uninstall secrets
   ignore_errors: yes
 
 - name: Install the helm-secrets plugin for helm
   become: no
   command:
-    cmd: helm plugin install https://github.com/jkroepke/helm-secrets --verify=false
+    cmd: helm plugin install --verify=false https://github.com/jkroepke/helm-secrets/releases/download/v4.7.4/secrets-4.7.4.tgz
+
+- name: Uninstall the helm-secrets-getter plugin for helm
+  become: no
+  command:
+    cmd: helm plugin uninstall secrets-getter
   ignore_errors: yes
+
+- name: Install the helm-secrets-getter plugin for helm
+  become: no
+  command:
+    cmd: helm plugin install --verify=false https://github.com/jkroepke/helm-secrets/releases/download/v4.7.4/secrets-getter-4.7.4.tgz
+
+
+- name: Uninstall the helm-secrets-post-renderer plugin for helm
+  become: no
+  command:
+    cmd: helm plugin uninstall secrets-post-renderer
+  ignore_errors: yes
+
+- name: Install the helm-secrets-post-renderer plugin for helm
+  become: no
+  command:
+    cmd: helm plugin install --verify=false https://github.com/jkroepke/helm-secrets/releases/download/v4.7.4/secrets-post-renderer-4.7.4.tgz
+
+- name: Uninstall the helm-unittests plugin for helm
+  become: no
+  command:
+    cmd: helm plugin uninstall unittest
+  ignore_errors: yes
+
+- name: Install the helm-unittests plugin for helm
+  become: no
+  command:
+    cmd: helm plugin install https://github.com/helm-unittest/helm-unittest --verify=false
 
 - include_tasks: install-helm-sops.yml

@@ -1,7 +1,9 @@
 - name: "[CLOUDFLARED]   | Ensure cloudflared repo present"
+  when: ansible_pkg_mgr == 'dnf'
   copy: src=cloudflared.repo
         dest=/etc/yum.repos.d/
         owner=root group=root mode=0644
 
 - name: "[CLOUDFLARED]   | Install cloudflared cli"
+  when: ansible_pkg_mgr == 'dnf'
   dnf: name=cloudflared

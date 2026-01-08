@@ -1,0 +1,69 @@
+- name: "[BASE PKGS]     | Ensure that general desktop applications present"
+  apt:
+   name:
+    # TODO this does not work somehow
+    # - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2023.09.06-1.fedora.x86_64.rpm
+    #- transmission
+    - gparted
+    #- calibre
+    #- remmina
+    - gimp
+    - unar
+    - easy-rsa
+    - wine
+    - p7zip
+    # - unetbootin
+    # - pdfshuffler
+    # - fuse-sshfs
+    # - nethogs
+
+
+- name: Install gopass archive keyring
+  become: true
+  ansible.builtin.get_url:
+    url: https://packages.gopass.pw/repos/gopass/gopass-archive-keyring.gpg
+    dest: /usr/share/keyrings/gopass-archive-keyring.gpg
+    mode: '0644'
+
+- name: "[GOPASS]     | Ensure that gopass repo present"
+  copy: src=ubuntu-gopass.sources
+   dest=/etc/apt/sources.list.d/gopass.sources
+   owner=root group=root mode=0644
+
+- name: "[GOPASS]     | Ensure that gopass present"
+  apt:
+    update_cache: true
+    name:
+     - git
+     - gnupg
+     - rng-tools
+     - gopass
+     - gopass-jsonapi
+     - xclip
+
+
+#- name: Add the flathub flatpak repository remote to the system installation
+#  flatpak_remote:
+#   name: flathub
+#   state: present
+#   flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+#   method: system
+#
+#- name: Add the flathub flatpak repository remote to the user installation
+#  flatpak_remote:
+#   name: flathub
+#   state: present
+#   flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+#   method: user
+#
+#- name: Install flatpak apps
+#  flatpak:
+#   name: "{{ item }}"
+#   state: present
+#  become: no
+#  with_items:
+#   - com.valvesoftware.Steam
+#   - org.videolan.VLC
+#   - org.openstreetmap.josm
+#   - org.gnome.FileRoller
+#

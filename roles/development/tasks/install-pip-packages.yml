@@ -1,4 +1,12 @@
 - name: "[PIP]        | Installing pip packages"
+  when: ansible_pkg_mgr == 'apt'
+  apt: name={{item}}
+  become: yes
+  with_items:
+    - python3-virtualenv
+
+- name: "[PIP]        | Installing pip packages"
+  when: ansible_pkg_mgr == 'dnf'
   pip:
     executable: pip3
     name:
