@@ -8,3 +8,5 @@
    - golang
    - npm
    - python3-dev
+   - podman
+   - openjdk-25-jdk

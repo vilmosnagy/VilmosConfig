@@ -6,3 +6,10 @@
     disable_gpg_check: true
   when:
     - ansible_pkg_mgr == 'dnf'
+
+- name: install the SOPS deb from a remote repo
+  apt:
+    deb: 'https://github.com/getsops/sops/releases/download/v3.11.0/sops_3.11.0_amd64.deb'
+    state: present
+  when:
+    - ansible_pkg_mgr == 'apt'

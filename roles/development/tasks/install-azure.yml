@@ -11,3 +11,69 @@
   dnf: name={{item}}
   with_items:
     - azure-cli
+
+- name: "[AZURE]      | Install required APT packages"
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+    state: present
+    update_cache: yes
+
+- name: "[AZURE]      | Ensure APT keyrings directory exists"
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: "0755"
+
+- name: "[AZURE]      | Download Microsoft GPG key"
+  ansible.builtin.get_url:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    dest: /tmp/microsoft.asc
+    mode: "0644"
+
+- name: "[AZURE]      | Convert Microsoft GPG key to dearmored format"
+  ansible.builtin.command:
+    cmd: gpg --dearmor -o /etc/apt/keyrings/microsoft.gpg /tmp/microsoft.asc
+    creates: /etc/apt/keyrings/microsoft.gpg
+
+- name: "[AZURE]      | Set permissions on Microsoft GPG key"
+  ansible.builtin.file:
+    path: /etc/apt/keyrings/microsoft.gpg
+    mode: "0644"
+
+- name: "[AZURE]      | Get distribution codename"
+  ansible.builtin.command: lsb_release -cs
+  register: az_dist
+  changed_when: false
+
+- name: "[AZURE]      | Get system architecture"
+  ansible.builtin.command: dpkg --print-architecture
+  register: dpkg_arch
+  changed_when: false
+
+- name: "[AZURE]      | Add Azure CLI APT source"
+  ansible.builtin.copy:
+    dest: /etc/apt/sources.list.d/azure-cli.sources
+    mode: "0644"
+    # TODO Suites: {{ az_dist.stdout }} - de most csak az egyel ezekőttit támogatja az azure
+    content: |
+      Types: deb
+      URIs: https://packages.microsoft.com/repos/azure-cli/
+      Suites: noble
+      Components: main
+      Architectures: {{ dpkg_arch.stdout }}
+      Signed-by: /etc/apt/keyrings/microsoft.gpg
+
+- name: "[AZURE]      | Update APT cache"
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: "[AZURE]      | Install Azure CLI"
+  ansible.builtin.apt:
+    name: azure-cli
+    state: present
+

@@ -1,0 +1,21 @@
+- name: Create the directory where the pulimi downloads
+  file:
+    path: /home/vilmosnagy/.local/bin/pulumi
+    state: directory
+    mode: '0755'
+
+- name: "[install]                : pulimi"
+  unarchive:
+    src: "https://get.pulumi.com/releases/sdk/pulumi-v3.214.1-linux-x64.tar.gz"
+    dest: "/home/vilmosnagy/.local/bin"
+    remote_src: yes
+    exclude:
+      - README.md
+      - LICENSE
+    mode: u=rwx,g=rx,o=rx
+
+- name: Add pulumi to user's path
+  lineinfile:
+    path: /home/vilmosnagy/.bashrc
+    line: 'export PATH="/home/vilmosnagy/.local/bin/pulumi:$PATH"'
+    create: yes
